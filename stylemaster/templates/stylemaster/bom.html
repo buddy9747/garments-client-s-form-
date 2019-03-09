@@ -1,0 +1,68 @@
+{% extends 'stylemaster/base.html' %}
+{% block body %}
+<h1 style="color:#ff4c17;">Summary</h1>
+    {% for i in a %}
+ <div class="col-md-2"> Style : </div> <div class="col-md-2 btn-primary">    {{ i.style }}</div>
+
+<div class="col-md-2"> Category : </div> <div class="col-md-2 btn-primary">  {{ i.category }}</div>
+
+  <div class="col-md-2"> Color : </div> <div class="col-md-2 btn-primary">    {{ i.style }}</div>
+
+<div class="col-md-2"> Size : </div> <div class="col-md-2 btn-primary">  {{ i.category }}</div>
+
+    <div class="col-md-2"> Style : </div> <div class="col-md-2 btn-primary">    {{ i.style }}</div>
+
+<div class="col-md-2"> Category : </div> <div class="col-md-2 btn-primary">  {{ i.category }}</div>
+
+{% endfor %}
+
+<br><br>{% load mathfilters %}
+    <h2 align="center" style="color:#ff4c17;">Bill of materials</h2>
+<h2 style="color:#ff4c17;">Fabrics Description</h2>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Fabric Name</th >
+    <th style="text-align: center;">Quality</th><th style="text-align: center;">Width</th>
+    <th style="text-align: center;">Unit</th><th style="text-align: center;">Consumption</th>
+    <th style="text-align: center;">Rate</th><th style="text-align: center;">Cost</th></tr></thead>
+   {% for m in d %}
+       <tr style="text-align: center">
+<td >{{ m.fabconsumption}}</td>
+       <td>{{ m.fabquality }}</td>
+       <td>{{ m.fabwidth }}</td>
+       <td>{{ m.fabunit }}</td>
+       <td>{{ m.consumption }}</td>
+       <td>{{ m.fabrate }}</td>
+       <td>  {{m.consumption|mul:m.fabrate}}</td>
+       </tr>
+{% endfor %}
+</table>
+
+
+    <br>
+    <br>
+
+
+
+ <h2 style="color:#ff4c17;">Trims Description</h2>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Trims Name</th >
+    <th style="text-align: center;">Quality</th><th style="text-align: center;">Specification</th>
+    <th style="text-align: center;">Unit</th><th style="text-align: center;">Consumption</th>
+    <th style="text-align: center;">Rate</th><th style="text-align: center;">Cost</th></tr></thead>
+   {% for m in d %}
+       <tr style="text-align: center">
+<td >{{ m.trims}}</td>
+       <td>{{ m.trimquality }}</td>
+       <td>{{ m.trimspecific }}</td>
+       <td>{{ m.trimunit }}</td>
+       <td>{{ m.trimconsumption }}</td>
+       <td>{{ m.trimrate }}</td>
+       <td> {{m.trimconsumption|mul:m.trimrate}}</td>
+       </tr>
+{% endfor %}
+</table>
+    <br>
+    <br>
+{% endblock %}

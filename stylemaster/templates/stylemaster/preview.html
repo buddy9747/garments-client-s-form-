@@ -1,0 +1,102 @@
+{% extends 'stylemaster/base.html' %}
+{% block body %}
+<div class="container">
+
+<div><h2>Style Master</h2></div>
+   {%  for i in a %}
+
+<div class="table  table-striped">
+<h4>
+<div class="row">
+  <div class="col-md-2"> Item No. :</div> <div class="col-md-2 btn-primary"> {{ i.item_no }}</div>
+  <div class="col-md-2"> Style : </div> <div class="col-md-2 btn-primary">    {{ i.style }}</div>
+  <div class="col-md-2"> Type : </div> <div class="col-md-2 btn-primary">     {{ i.type}}</div></div>
+   <div class="row">
+     <div class="col-md-2">  Brand :</div> <div class="col-md-2 btn-primary">           {{i.brand}}</div>
+   <div class="col-md-2"> Category : </div> <div class="col-md-2 btn-primary">  {{ i.category }}</div>
+  <div class="col-md-2">  Item Group :</div> <div class="col-md-2 btn-primary">   {{ i.item_group }}</div></div>
+ <div class="row">
+   <div class="col-md-2">    Season : </div> <div class="col-md-2 btn-primary">  {{ i.season }}</div>
+   <div class="col-md-2">  Responsible : </div> <div class="col-md-2 btn-primary"> {{ i.responsible }}</div>
+    <div class="col-md-2"> Approver : </div> <div class="col-md-2 btn-primary"> {{ i.approver }}</div></div>
+   <div class="row">
+    <div class="col-md-2">   Product Designer :</div> <div class="col-md-2 btn-primary">  {{ i.product_designer }}</div>
+    <div class="col-md-2"> Production Merchant : </div> <div class="col-md-2 btn-primary"> {{ i.production_merchant }}</div>
+     <div class="col-md-2">PD Marchant :</div> <div class="col-md-2 btn-primary">  {{ i.pd_merchant }}</div></div>
+    <div class="row">
+     <div class="col-md-2">   Factory Marchant : </div> <div class="col-md-2 btn-primary"> {{ i.factory_merchant }}</div>
+   <div class="col-md-2"> Sales Person :</div> <div class="col-md-2 btn-primary">   {{ i.sales_person }}</div>
+   <div class="col-md-2"> Basic UOM : </div> <div class="col-md-2 btn-primary">  {{ i.basic_uom }}</div></div>
+   <div class="row">
+    <div class="col-md-2">   Alt UOM : </div> <div class="col-md-2 btn-primary">  {{ i.alt_uom }}</div>
+   <div class="col-md-2"> Conversion Factor : </div> <div class="col-md-2 btn-primary">  {{ i.conversion_factor }}</div>
+    <div class="col-md-2"> Currency : </div> <div class="col-md-2 btn-primary"> {{ i.currency }}</div></div>
+   <div class="row">
+     <div class="col-md-2">  Sales Price : </div> <div class="col-md-2 btn-primary"> {{ i.sales_price }}</div>
+     <div class="col-md-2">Sale Price Qty :  </div> <div class="col-md-2 btn-primary">{{ i.sale_price_qty }}</div>
+     <div class="col-md-2">Buying House Commission :</div> <div class="col-md-2 btn-primary">{{ i.buying_house_commission }}</div></div>
+    <div class="row">
+    <div class="col-md-2">    Custom Group : </div> <div class="col-md-2 btn-primary">   {{ i.custom_group }}</div>
+    <div class="col-md-2">Licence :  </div> <div class="col-md-2 btn-primary"> {{ i.licence }}</div>
+   <div class="col-md-2"> National DBK :   </div> <div class="col-md-2 btn-primary">{{ i.national_dbk }}</div></div>
+    <div class="row">
+    <div class="col-md-2">   Rosl Group : </div> <div class="col-md-2 btn-primary">  {{ i.rosl_group }}</div>
+   <div class="col-md-2"> Propertys : </div> <div class="col-md-2 btn-primary">  {{ i.propertys }}</div>
+    <div class="col-md-2"> Order Confirmation Date : </div> <div class="col-md-2 btn-primary"> {{ i.order_confirmation_date }}</div></div>
+   <div class="row">
+      <div class="col-md-2"> PCD : </div> <div class="col-md-2 btn-primary">  {{ i.pcd }}</div>
+ <div class="col-md-2"> Ex Factory Date :</div> <div class="col-md-2 btn-primary">   {{ i.ex_factory_date }}</div></div>
+
+    </h4>   </div>
+       {% endfor %}
+
+       <h2>About Fabric</h2>
+
+       {% for j in b %}
+           <div class="table">
+           <h4>
+    <div class="row">
+     <div class="col-md-2">   Fabric Code :  </div> <div class="col-md-2 btn-primary">    {{ j.fabric_code }}</div>
+    <div class="col-md-2"> Quality : </div> <div class="col-md-2 btn-primary">  {{ j.quality }}</div>
+    <div class="col-md-2"> Composition :  </div> <div class="col-md-2 btn-primary">    {{ j.composition }}</div></div>
+   <div class="row">
+    <div class="col-md-2">   Weave :  </div> <div class="col-md-2 btn-primary">    {{ j.weave }}</div>
+    <div class="col-md-2"> Count :  </div> <div class="col-md-2 btn-primary">    {{ j.count }}</div></div>
+     <div class="row">
+              <div class="col-md-2"> Construction :</div> <div class="col-md-2 btn-primary">  {{ j.construction }}</div>
+     <div class="col-md-2">  Types : </div> <div class="col-md-2 btn-primary">  {{ j.types }}</div></div>
+</h4>
+</div>
+
+{% endfor %}
+<h2>About Trim</h2>
+{% for k in c %}
+    <div class="table"><h4>
+    <div class="row">
+  <div class="col-md-2">  Trim Code : </div> <div class="col-md-2 btn-primary"> {{ k.trim_code }}</div>
+ <div class="col-md-2">   Quality :</div> <div class="col-md-2 btn-primary"> {{ k.quality }}</div>
+  <div class="col-md-2">  composition :</div> <div class="col-md-2 btn-primary">{{ k.composition }}</div></div>
+  <div class="row">
+   <div class="col-md-2">   size :</div> <div class="col-md-2 btn-primary"> {{ k.size }}</div>
+  <div class="col-md-2">  Color :</div> <div class="col-md-2 btn-primary">{{ k.color }}</div></div>
+    <div class="row">
+     <div class="col-md-2">   Construction :</div> <div class="col-md-2 btn-primary"> {{ k.construction }}</div>
+   <div class="col-md-2"> Types :</div> <div class="col-md-2 btn-primary"> {{ k.types }}</div></div>
+</h4>
+</div>
+{% endfor %}
+<br><br>
+<center><table><tr>
+    {% for i in a %}
+    <a href="{% url 'update' pk=i.style_no %}"> <button type="Edit" class="btn btn-primary">Write Over For Style Master</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    {% endfor %}
+	 {% for j in b %}
+    <a href="{% url 'updatefab' pk=j.fabric_no %}"> <button type="Edit" class="btn btn-primary">Write Over For Fabric</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    {% endfor %}
+	 {% for k in c %}
+    <a href="{% url 'updatetri' pk=k.trim_no %}"> <button type="Edit" class="btn btn-primary">Write Over For Trim</button></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    {% endfor %}
+<a href="{% url 'sample' %}"><button type="submit" class="btn btn-primary">Final Submit</button></a> </tr></table></center></div>
+
+<br><br><br>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'category/base.html' %}
+{% block body %}
+
+    <form method="post">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <button type="submit" class="btn btn-primary" value="Signup" style="margin-left: 20%">submit</button>
+</form>
+{% endblock %}

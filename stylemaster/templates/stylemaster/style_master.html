@@ -1,0 +1,32 @@
+{% extends 'stylemaster/base.html' %}
+
+{% block body %}
+    <div class="container">
+    <div class="container">
+    <div class="col-sm-6">
+    <div class="panel panel-primary">
+    <div class="panel-heading"><h3>StyleMaster</h3></div>
+    <div class="panel-body">
+ <form enctype="multipart/form-data" method="POST">
+ 
+                {% csrf_token %}
+                {% for field in form %}
+				
+					{% if forloop.counter == 3 %}
+						
+					{% endif %}
+                    {{ field.label }} {{ field }}
+                    {% if forloop.counter|divisibleby:"2" %}
+                        <br>
+						<br>
+                    {% endif %}
+					
+                {% endfor %}
+                <button type="submit" value="Style" >Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
